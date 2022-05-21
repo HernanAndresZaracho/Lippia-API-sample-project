@@ -15,12 +15,12 @@ public class ProjectSteps extends PageSteps {
 
     @Given("Un api-key valido")
     public void unApiKeyValido() {
-        ProjectService.API_KEY.set(PropertyManager.getProperty("api-key"));
+        BaseService.API_KEY.set(PropertyManager.getProperty("api-key"));
     }
 
     @And("Un workspace-id")
     public void unWorkspaceId() {
-        ProjectService.W_SPACE.set(PropertyManager.getProperty("w-space"));
+        BaseService.W_SPACE.set(PropertyManager.getProperty("w-space"));
 
     }
 

@@ -3,7 +3,21 @@ Feature: Workspace
   QUIERO ver las configuraciones de mi Worckspace
   PARA llevar un buen control de mis horas de trabajo y el de mis empleados
 
+
+
   @Success
+  Scenario Outline: Consulta Project resultado erroneo
+    Given X-Api-Key invalido
+    And Un workspace-id
+    When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
+    And se obtuvo el status code <status>
+    Then se obtuvo el response esperado en <entity> con el <jsonResponse>
+    Examples:
+      | operation | entity | jsonName   | status | jsonResponse   |
+      | GET       | ERROR  | project/rq | 401    | project/rs_401 |
+
+
+  @Success1
   Scenario Outline: Consulta Project resultado exitoso
     Given Un api-key valido
     And Un workspace-id
