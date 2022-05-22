@@ -24,8 +24,18 @@ public class ProjectSteps extends PageSteps {
 
     }
 
+    @And("Un workspace-id invalido")
+    public void unWorkspaceIdInvalido() {
+        BaseService.W_SPACE.set("628418d1de42d9011b50949d1");
+
+    }
     @Then("se muestran los project del perfil")
     public void seMuestranLosProjectDelPerfil() {
         validator.printProject();
+    }
+
+    @And("Un workspace-id vacio")
+    public void unWorkspaceIdVacio() {
+        BaseService.W_SPACE.set("");
     }
 }
