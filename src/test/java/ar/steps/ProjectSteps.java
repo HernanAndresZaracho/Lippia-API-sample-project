@@ -4,6 +4,7 @@ import ar.validator.ProjectValidator;
 import ar.validator.WorkspaceValidator;
 import com.crowdar.core.PageSteps;
 import com.crowdar.core.PropertyManager;
+import com.github.jknack.handlebars.internal.antlr.atn.SemanticContext;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -37,5 +38,10 @@ public class ProjectSteps extends PageSteps {
     @And("Un workspace-id vacio")
     public void unWorkspaceIdVacio() {
         BaseService.W_SPACE.set("");
+    }
+
+    @And("Un project existente")
+    public void unProjectExistente() {
+        BaseService.P_ID.set(PropertyManager.getProperty("p-id"));
     }
 }
