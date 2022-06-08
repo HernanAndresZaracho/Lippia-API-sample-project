@@ -1,0 +1,17 @@
+{
+  "url": "{{base.url}}",
+  "headers": {
+    "X-Api-Key": "{{api-key}}",
+    "Content-Type": "application/json"
+  },
+  "body":{
+    "name": "{{newProyect}}",
+    "clientId": "",
+    "isPublic": "false",
+    "color": "#f44336",
+    "note": "This is project's note",
+    "billable": "true",
+    "public": false
+  },
+  "endpoint":"/workspaces/{{workspace}}/projects"
+}

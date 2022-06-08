@@ -1,6 +1,5 @@
 package api.config;
 
-import api.model.ErrorResponse;
 import services.*;
 
 public enum EntityConfiguration {
@@ -33,7 +32,7 @@ public enum EntityConfiguration {
     PROJECTID {
         @Override
         public Class<?> getEntityService() {
-            return ProjectServiceId.class;
+            return ProjectIdService.class;
         }
     },
     ERROR {
@@ -41,6 +40,30 @@ public enum EntityConfiguration {
         public Class<?> getEntityService() {
             return ErrorService.class;
         }
+    },
+    ERROR401 {
+        @Override
+        public Class<?> getEntityService() {
+            return Error404Service.class;
+        }
+    },
+    ERROR404 {
+        @Override
+        public Class<?> getEntityService() {
+            return Error404Service.class;
+        }
+    },
+    PROJECTADD {
+        @Override
+        public Class<?> getEntityService() {
+            return ProjectAddService.class;
+        }
+    },
+    PROJECTUPDATE{
+      @Override
+      public Class<?> getEntityService(){
+          return ProjectUpdateService.class;
+      }
     };
 
     public abstract Class<?> getEntityService();
