@@ -1,6 +1,5 @@
 package ar.steps;
 
-import ar.validator.WorkspaceValidator;
 import com.crowdar.core.PageSteps;
 import com.crowdar.core.PropertyManager;
 import io.cucumber.java.en.And;
@@ -15,12 +14,12 @@ public class ProjectSteps extends PageSteps {
     public void unApiKeyValido() {
         BaseService.API_KEY.set(PropertyManager.getProperty("api-key"));
     }
-    @Given("X-Api-Key invalido")
-    public void xApiKeyInvalido() {
+    @Given("Un api-key invalido")
+    public void unApiKeyInvalido() {
         BaseService.API_KEY.set("NDRmZWUwYzEtOTZhMS00NDk5LWJkZWItY2FiNmY1MjQ3NGN");
     }
-    @And("Un workspace-id")
-    public void unWorkspaceId() {
+    @And("Un workspace-id valido")
+    public void unWorkspaceIdValido() {
         BaseService.W_SPACE.set(PropertyManager.getProperty("w-space"));
 
     }
@@ -47,5 +46,10 @@ public class ProjectSteps extends PageSteps {
     @Then("Se valida que existe el project")
     public void seValidaQueExisteElProject() {
         validateProjectId();
+    }
+
+    @And("Un projectId invalido")
+    public void unProjectIdInvalido() {
+        BaseService.P_ID.set("62843a98c275545159e8c9231");
     }
 }

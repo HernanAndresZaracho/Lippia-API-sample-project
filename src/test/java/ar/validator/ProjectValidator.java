@@ -1,7 +1,7 @@
 package ar.validator;
 
 
-import api.model.Project.ProjectError404;
+import api.model.ErrorResponse;
 import api.model.Project.ProjectResponse;
 import api.model.workspaces.WorkspacesResponse;
 import com.crowdar.api.rest.APIManager;
@@ -12,11 +12,12 @@ public class ProjectValidator {
         WorkspacesResponse[] response = (WorkspacesResponse[]) APIManager.getLastResponse().getResponse();
         Assert.assertNotNull(response[0].getId(),"El campo ID es nulo");
     }
-    //Si no exiten projets, la clase será nula y por lo tanto falsa
+    //response[0] se utiliza asi por que es una lista
     public static void validateProject(){
         ProjectResponse[] response = (ProjectResponse[]) APIManager.getLastResponse().getResponse();
         Assert.assertNotNull(response[0].getId(),"El campo ID es nulo");
     }
+    //response se utiliza asi por que es una clase
     public static void validateProjectId(){
         ProjectResponse response = (ProjectResponse) APIManager.getLastResponse().getResponse();
         Assert.assertNotNull(response.getId(),"El campo ID es nulo");
@@ -31,7 +32,7 @@ public class ProjectValidator {
         Assert.assertEquals(response.getColor(), color); //color
     }
     public static void validateError404(){
-        ProjectError404 response = (ProjectError404) APIManager.getLastResponse().getResponse();
+        ErrorResponse response = (ErrorResponse) APIManager.getLastResponse().getResponse();
         Assert.assertNotNull(response.getTimestamp()); //fecha
         Assert.assertEquals(Integer.toString(response.getStatus()),"404"); //status
         Assert.assertEquals(response.getError(),"Not Found"); // message

@@ -41,16 +41,10 @@ public enum EntityConfiguration {
             return ErrorService.class;
         }
     },
-    ERROR401 {
+    ERRORID {
         @Override
         public Class<?> getEntityService() {
-            return Error404Service.class;
-        }
-    },
-    ERROR404 {
-        @Override
-        public Class<?> getEntityService() {
-            return Error404Service.class;
+            return ErrorIdService.class;
         }
     },
     PROJECTADD {
