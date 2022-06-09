@@ -46,12 +46,6 @@ public enum EntityConfiguration {
         public Class<?> getEntityService() {
             return ErrorIdService.class;
         }
-    },
-    PROJECTUPDATE{
-      @Override
-      public Class<?> getEntityService(){
-          return ProjectUpdateService.class;
-      }
     };
 
     public abstract Class<?> getEntityService();

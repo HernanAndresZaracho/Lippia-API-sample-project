@@ -25,7 +25,7 @@ Feature: Creacion de nuevos Projects
       | POST      | ERROR  | projectAdd/rq_add | 400    | projectAdd/rs_400 |
 
   @Success
-  Scenario Outline: Error al crear por Project ya existente (nombre)
+  Scenario Outline: Error al crear Project por api-key invalido
     Given Un api-key invalido
     And Un workspace-id valido
     When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
@@ -37,7 +37,7 @@ Feature: Creacion de nuevos Projects
       | POST      | ERROR  | projectAdd/rq_add | 401    | project/rs_401 |
 
   @Success
-  Scenario Outline: Error al crear por Project ya existente (nombre)
+  Scenario Outline: Error al crear Project por workspace-id invalido
     Given Un api-key valido
     And Un workspace-id invalido
     When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
@@ -48,7 +48,7 @@ Feature: Creacion de nuevos Projects
       | POST      | ERROR  | projectAdd/rq_add | 403    |
 
   @Success
-  Scenario Outline: Error al crear por Project ya existente (nombre)
+  Scenario Outline: Error al crear Project por workspace-id vacio
     Given Un api-key valido
     And Un workspace-id vacio
     When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
