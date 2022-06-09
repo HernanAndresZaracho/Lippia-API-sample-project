@@ -31,11 +31,4 @@ public class ProjectValidator {
         Assert.assertEquals(response.getName(), nombre); //nombre
         Assert.assertEquals(response.getColor(), color); //color
     }
-    public static void validateError404(){
-        ErrorResponse response = (ErrorResponse) APIManager.getLastResponse().getResponse();
-        Assert.assertNotNull(response.getTimestamp()); //fecha
-        Assert.assertEquals(Integer.toString(response.getStatus()),"404"); //status
-        Assert.assertEquals(response.getError(),"Not Found"); // message
-        Assert.assertEquals(response.getPath(),"/v1/workspaces//projects/"); //endpoint
-    }
 }

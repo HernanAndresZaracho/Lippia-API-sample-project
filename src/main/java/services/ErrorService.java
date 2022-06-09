@@ -14,4 +14,7 @@ public class ErrorService extends BaseService {
     public static Response get(String jsonName) {
         return get(jsonName, ErrorResponse.class,setParams());
     }
+    public static Response post(String jsonName) {
+        return post(jsonName, ErrorResponse.class,setParams());
+    }
 }

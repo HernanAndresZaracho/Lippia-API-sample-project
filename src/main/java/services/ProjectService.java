@@ -13,4 +13,7 @@ public class ProjectService extends BaseService {
     public static Response get(String jsonName) {
         return get(jsonName, ProjectResponse[].class, setParams());
     }
+    public static Response post(String jsonName) {
+        return post(jsonName, ProjectResponse.class, setParams());
+    }
 }

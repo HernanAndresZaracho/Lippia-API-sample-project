@@ -1,20 +1,20 @@
-Feature: Consulta de respuestas(status) al Project por ID
+Feature: Update de Projects
 
   @Success
-  Scenario Outline: Consulta Project por ID con resultado exitoso
+  Scenario Outline: Cambiamos el nombre del Project
     Given Un api-key valido
     And Un workspace-id valido
     And Un projectId valido
     When I perform a '<operation>' to '<entity>' endpoint with the '<jsonName>' and ''
     And se obtuvo el status code <status>
-    Then Se valida que existe el project
+    Then Se valida el project con el nombre puesto y color puesto
 
     Examples:
-      | operation | entity    | jsonName     | status |
-      | GET       | PROJECTID | projectId/rq | 200    |
+      | operation | entity    | jsonName          | status |
+      | PUT       | PROJECTID | projectUpd/rq_upd | 200    |
 
   @Success
-  Scenario Outline: Consulta Project por ID con api key invalido
+  Scenario Outline: Error al editar el Project por ID con api key invalido
     Given Un api-key invalido
     And Un workspace-id valido
     And Un projectId valido
@@ -23,11 +23,11 @@ Feature: Consulta de respuestas(status) al Project por ID
     Then se obtuvo el response esperado en <entity> con el <jsonResponse>
 
     Examples:
-      | operation | entity  | jsonName     | status | jsonResponse   |
-      | GET       | ERRORID | projectId/rq | 401    | project/rs_401 |
+      | operation | entity  | jsonName          | status | jsonResponse   |
+      | GET       | ERRORID | projectUpd/rq_upd | 401    | project/rs_401 |
 
   @Success
-  Scenario Outline: Consulta Project por ID con workspace invalido
+  Scenario Outline: Error al editar el Project por ID con workspace invalido
     Given Un api-key valido
     And Un workspace-id invalido
     And Un projectId valido
@@ -35,11 +35,11 @@ Feature: Consulta de respuestas(status) al Project por ID
     And se obtuvo el status code <status>
 
     Examples:
-      | operation | entity | jsonName     | status |
-      | GET       | ERRORID | projectId/rq | 403    |
+      | operation | entity  | jsonName          | status |
+      | GET       | ERRORID | projectUpd/rq_upd | 403    |
 
   @Success
-  Scenario Outline: Consulta Project por ID invalido
+  Scenario Outline: Error al editar el Project por ID invalido
     Given Un api-key valido
     And Un workspace-id valido
     And Un projectId invalido
@@ -48,11 +48,11 @@ Feature: Consulta de respuestas(status) al Project por ID
     Then se obtuvo el response esperado en <entity> con el <jsonResponse>
 
     Examples:
-      | operation | entity  | jsonName     | status | jsonResponse     |
-      | GET       | ERRORID | projectId/rq | 400    | projectId/rs_400 |
+      | operation | entity  | jsonName          | status | jsonResponse     |
+      | GET       | ERRORID | projectUpd/rq_upd | 400    | projectId/rs_400 |
 
   @Success
-  Scenario Outline: Consulta Project por ID con workspace vacio
+  Scenario Outline: Error al editar el por ID con workspace vacio
     Given Un api-key valido
     And Un workspace-id vacio
     And Un projectId valido
@@ -60,11 +60,5 @@ Feature: Consulta de respuestas(status) al Project por ID
     And se obtuvo el status code <status>
     Then se obtuvo el response esperado en <entity> con el <jsonResponse>
     Examples:
-      | operation | entity  | jsonName     | status | jsonResponse   |
-      | GET       | ERRORID | projectId/rq | 404    | project/rs_404 |
-
-
-
-
-
-
+      | operation | entity  | jsonName          | status | jsonResponse   |
+      | GET       | ERRORID | projectUpd/rq_upd | 404    | project/rs_404 |

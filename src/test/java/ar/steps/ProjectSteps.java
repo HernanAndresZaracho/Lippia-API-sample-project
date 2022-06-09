@@ -52,4 +52,13 @@ public class ProjectSteps extends PageSteps {
     public void unProjectIdInvalido() {
         BaseService.P_ID.set("62843a98c275545159e8c9231");
     }
+    @Then("Se valida el project con el nombre puesto")
+    public void seValidaElProjectConElNombrePuesto() {
+        validateAddProject("CrowdArCambiado");
+    }
+
+    @Then("Se valida el project con el nombre puesto y color puesto")
+    public void seValidaElProjectConElNombrePuestoYColorPuesto() {
+        validateUpdProject("CrowdArCambiado", "#363CF4");
+    }
 }

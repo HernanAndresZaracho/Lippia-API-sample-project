@@ -1,0 +1,20 @@
+{
+  "url": "{{base.url}}",
+  "headers": {
+    "X-Api-Key": "{{api-key}}",
+    "Content-Type": "application/json"
+  },
+  "body":{
+  "name": "CrowdArCambiado",
+  "clientId": "",
+  "isPublic": "false",
+  "hourlyRate": {
+    "amount": 3600
+  },
+  "color": "#363CF4",
+  "note": "Antes se llamaba CrowdAr, ahora se llama CrowdArCambiado, tambien cambio el color",
+  "billable": "true",
+  "archived": "true"
+  },
+  "endpoint": "/workspaces/{{workspace}}/projects/{{p-id}}"
+}
