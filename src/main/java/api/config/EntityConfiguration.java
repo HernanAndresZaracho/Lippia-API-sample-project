@@ -35,6 +35,12 @@ public enum EntityConfiguration {
             return ProjectIdService.class;
         }
     },
+    TIME_ENTRIES {
+        @Override
+        public Class<?> getEntityService() {
+            return TimeEntriesService.class;
+        }
+    },
     ERROR {
         @Override
         public Class<?> getEntityService() {

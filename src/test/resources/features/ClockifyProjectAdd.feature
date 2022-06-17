@@ -1,6 +1,6 @@
 Feature: Creacion de nuevos Projects
 
-  @Success
+  @Success1
   Scenario Outline: Creacion de Project exitoso
     Given Un api-key valido
     And Un workspace-id valido
@@ -12,7 +12,7 @@ Feature: Creacion de nuevos Projects
       | operation | entity  | jsonName          | status |
       | POST      | PROJECT | projectAdd/rq_add | 201    |
 
-  @Success
+  @Success1
   Scenario Outline: Error al crear por Project ya existente (nombre)
     Given Un api-key valido
     And Un workspace-id valido
@@ -24,7 +24,7 @@ Feature: Creacion de nuevos Projects
       | operation | entity | jsonName          | status | jsonResponse      |
       | POST      | ERROR  | projectAdd/rq_add | 400    | projectAdd/rs_400 |
 
-  @Success
+  @Success1
   Scenario Outline: Error al crear Project por api-key invalido
     Given Un api-key invalido
     And Un workspace-id valido
@@ -36,7 +36,7 @@ Feature: Creacion de nuevos Projects
       | operation | entity | jsonName          | status | jsonResponse   |
       | POST      | ERROR  | projectAdd/rq_add | 401    | project/rs_401 |
 
-  @Success
+  @Success1
   Scenario Outline: Error al crear Project por workspace-id invalido
     Given Un api-key valido
     And Un workspace-id invalido
@@ -47,7 +47,7 @@ Feature: Creacion de nuevos Projects
       | operation | entity | jsonName          | status |
       | POST      | ERROR  | projectAdd/rq_add | 403    |
 
-  @Success
+  @Success1
   Scenario Outline: Error al crear Project por workspace-id vacio
     Given Un api-key valido
     And Un workspace-id vacio

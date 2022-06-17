@@ -1,6 +1,6 @@
 Feature: Consulta de respuestas(status) al Project por ID
 
-  @Success
+  @Success1
   Scenario Outline: Consulta Project por ID con resultado exitoso
     Given Un api-key valido
     And Un workspace-id valido
@@ -13,7 +13,7 @@ Feature: Consulta de respuestas(status) al Project por ID
       | operation | entity    | jsonName     | status |
       | GET       | PROJECTID | projectId/rq | 200    |
 
-  @Success
+  @Success1
   Scenario Outline: Consulta Project por ID con api key invalido
     Given Un api-key invalido
     And Un workspace-id valido
@@ -26,7 +26,7 @@ Feature: Consulta de respuestas(status) al Project por ID
       | operation | entity  | jsonName     | status | jsonResponse   |
       | GET       | ERRORID | projectId/rq | 401    | project/rs_401 |
 
-  @Success
+  @Success1
   Scenario Outline: Consulta Project por ID con workspace invalido
     Given Un api-key valido
     And Un workspace-id invalido
@@ -38,7 +38,7 @@ Feature: Consulta de respuestas(status) al Project por ID
       | operation | entity | jsonName     | status |
       | GET       | ERRORID | projectId/rq | 403    |
 
-  @Success
+  @Success1
   Scenario Outline: Consulta Project por ID invalido
     Given Un api-key valido
     And Un workspace-id valido
@@ -51,7 +51,7 @@ Feature: Consulta de respuestas(status) al Project por ID
       | operation | entity  | jsonName     | status | jsonResponse     |
       | GET       | ERRORID | projectId/rq | 400    | projectId/rs_400 |
 
-  @Success
+  @Success1
   Scenario Outline: Consulta Project por ID con workspace vacio
     Given Un api-key valido
     And Un workspace-id vacio

@@ -1,0 +1,17 @@
+{
+  "id": "62acc4434ebb4f143c9106c1",
+  "description": "{{descripcion}}",
+  "tagIds": [],
+  "userId": "628418d0de42d9011b509495",
+  "billable": true,
+  "taskId": "",
+  "projectId": "62843a98c275545159e8c923",
+  "timeInterval": {
+    "start": "2022-06-12T13:48:14Z",
+    "end": "2022-06-28T13:50:14Z",
+    "duration": "PT384H2M"
+  },
+  "workspaceId": "628418d1de42d9011b50949d",
+  "isLocked": false,
+  "customFieldValues": []
+}

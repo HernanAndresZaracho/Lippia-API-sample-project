@@ -1,6 +1,6 @@
 Feature: Update de Projects
 
-  @Success
+  @Success1
   Scenario Outline: Cambiamos el nombre del Project
     Given Un api-key valido
     And Un workspace-id valido
@@ -13,7 +13,7 @@ Feature: Update de Projects
       | operation | entity    | jsonName          | status |
       | PUT       | PROJECTID | projectUpd/rq_upd | 200    |
 
-  @Success
+  @Success1
   Scenario Outline: Error al editar el Project por ID con api key invalido
     Given Un api-key invalido
     And Un workspace-id valido
@@ -26,7 +26,7 @@ Feature: Update de Projects
       | operation | entity  | jsonName          | status | jsonResponse   |
       | GET       | ERRORID | projectUpd/rq_upd | 401    | project/rs_401 |
 
-  @Success
+  @Success1
   Scenario Outline: Error al editar el Project por ID con workspace invalido
     Given Un api-key valido
     And Un workspace-id invalido
@@ -38,7 +38,7 @@ Feature: Update de Projects
       | operation | entity  | jsonName          | status |
       | GET       | ERRORID | projectUpd/rq_upd | 403    |
 
-  @Success
+  @Success1
   Scenario Outline: Error al editar el Project por ID invalido
     Given Un api-key valido
     And Un workspace-id valido
@@ -51,7 +51,7 @@ Feature: Update de Projects
       | operation | entity  | jsonName          | status | jsonResponse     |
       | GET       | ERRORID | projectUpd/rq_upd | 400    | projectId/rs_400 |
 
-  @Success
+  @Success1
   Scenario Outline: Error al editar el por ID con workspace vacio
     Given Un api-key valido
     And Un workspace-id vacio

@@ -1,0 +1,23 @@
+{
+  "url": "{{base.url}}",
+  "headers": {
+    "X-Api-Key": "{{api-key}}",
+    "Content-Type": "application/json"
+  },
+  "body":{
+  "start": "2022-06-12T13:48:14.000Z",
+  "billable": "true",
+  "description": "{{descripcion}}",
+  "projectId": "{{p-id}}",
+  "taskId": "",
+  "end": "2022-06-28T13:50:14.000Z",
+  "tagIds": [],
+  "customFields": [
+      {
+        "customFieldId" : "",
+       "value": "Corrientes"
+     }
+    ]
+  },
+  "endpoint": "/workspaces/{{workspace}}/user/{{user-id}}/time-entries"
+}
