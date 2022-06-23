@@ -35,10 +35,28 @@ public enum EntityConfiguration {
             return ProjectIdService.class;
         }
     },
-    TIME_ENTRIES {
+    TIME_CONSULT{
         @Override
         public Class<?> getEntityService() {
-            return TimeEntriesService.class;
+            return TimeConsultService.class;
+        }
+    },
+    TIME_DELETE{
+        @Override
+        public Class<?> getEntityService() {
+            return TimeDeleteService.class;
+        }
+    },
+    TIME_ADD{
+        @Override
+        public Class<?> getEntityService() {
+            return TimeAddService.class;
+        }
+    },
+    TIME_UPDATE{
+        @Override
+        public Class<?> getEntityService() {
+            return TimeUpdateService.class;
         }
     },
     ERROR {

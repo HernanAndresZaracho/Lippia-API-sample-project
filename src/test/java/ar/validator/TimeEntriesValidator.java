@@ -7,17 +7,25 @@ import org.testng.Assert;
 import services.BaseService;
 
 public class TimeEntriesValidator {
-    public static void validate(){
+    public static void validateDuration(String duracion){
         TimeEntriesResponse[] response = (TimeEntriesResponse[]) APIManager.getLastResponse().getResponse();
-        Assert.assertNotNull(response[0].getId(),"El campo ID es nulo");
+        Assert.assertEquals(response[0].getTimeInterval().getDuration(),duracion);
     }
-    public static void validateDuration(String duration){
-        TimeEntriesResponse[] response = (TimeEntriesResponse[]) APIManager.getLastResponse().getResponse();
-        Assert.assertEquals(response[0].getTimeInterval().get(2), duration);
+    public static void buscarDescripcion(String descripcion){
+        TimeEntriesResponse[] responses = (TimeEntriesResponse[]) APIManager.getLastResponse().getResponse();
+        for(TimeEntriesResponse response : responses){
+            if(response.getDescription().equals(descripcion)){
+                BaseService.TIME_ID.set(response.getId());
+            }
+        }
     }
-    public static void validateDescripcion(){
-        TimeEntriesResponse[] response = (TimeEntriesResponse[]) APIManager.getLastResponse().getResponse();
-        Assert.assertEquals(response[0].getDescription(), BaseService.ADD_TIME_DESC.get());
+    public static void validateDescripcion(String nuevaDescripcion){
+        TimeEntriesResponse responses = (TimeEntriesResponse) APIManager.getLastResponse().getResponse();
+        Assert.assertEquals(responses.getDescription(), nuevaDescripcion);
+    }
+    public static void validateAdd(String descripcion){
+        TimeEntriesResponse responses = (TimeEntriesResponse) APIManager.getLastResponse().getResponse();
+        Assert.assertEquals(responses.getDescription(), descripcion);
     }
 
 }

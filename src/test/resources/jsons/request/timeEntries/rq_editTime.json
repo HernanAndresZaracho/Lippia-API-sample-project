@@ -14,10 +14,11 @@
   "tagIds": [],
   "customFields": [
       {
-        "customFieldId" : "",
+        "customFieldId" : "5b1e6b160cb8793dd93ec120",
+        "timeEntryId" : "5c5bda4fb079871c518b6f07",
         "value": "San Francisco"
      }
     ]
   },
-  "endpoint": "/workspaces/{{workspace}}/time-entries"
+  "endpoint": "/workspaces/{{workspace}}/time-entries/{{time-id}}"
 }

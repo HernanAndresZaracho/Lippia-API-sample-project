@@ -1,20 +1,18 @@
 package api.model.TimeEntries;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.List;
 
 public class TimeEntriesResponse {
     private String id;
     private String description;
-    private TagIds tagIds;
+    private List<String> tagIds;
     private String userId;
     private boolean billable;
     private String taskId;
     private String projectId;
-    private List<TimeInterval> timeInterval;
+    private timeInterval timeInterval;
     private String workspaceId;
-    private CustomFieldValues customFieldValues;
+    private List<CustomFieldValue> customFieldValues;
     private boolean isLocked;
 
 
@@ -33,11 +31,11 @@ public class TimeEntriesResponse {
         this.description = description;
     }
 
-    public TagIds getTagIds() {
+    public List<String> getTagIds() {
         return tagIds;
     }
 
-    public void setTagIds(TagIds tagIds) {
+    public void setTagIds(List<String> tagIds) {
         this.tagIds = tagIds;
     }
 
@@ -73,11 +71,11 @@ public class TimeEntriesResponse {
         this.projectId = projectId;
     }
 
-    public List<TimeInterval> getTimeInterval() {
+    public api.model.TimeEntries.timeInterval getTimeInterval() {
         return timeInterval;
     }
 
-    public void setTimeInterval(List<TimeInterval> timeInterval) {
+    public void setTimeInterval(api.model.TimeEntries.timeInterval timeInterval) {
         this.timeInterval = timeInterval;
     }
 
@@ -89,11 +87,11 @@ public class TimeEntriesResponse {
         this.workspaceId = workspaceId;
     }
 
-    public CustomFieldValues getCustomFieldValues() {
+    public List<CustomFieldValue> getCustomFieldValues() {
         return customFieldValues;
     }
 
-    public void setCustomFieldValues(CustomFieldValues customFieldValues) {
+    public void setCustomFieldValues(List<CustomFieldValue> customFieldValues) {
         this.customFieldValues = customFieldValues;
     }
 

@@ -7,9 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import services.BaseService;
-import services.TimeEntriesService;
 
-import static ar.validator.ProjectValidator.*;
 import static ar.validator.TimeEntriesValidator.*;
 
 public class TimeEntries extends PageSteps {
@@ -21,18 +19,33 @@ public class TimeEntries extends PageSteps {
         BaseService.USER_ID.set(PropertyManager.getProperty("user-id"));
     }
 
-    @And("se verifica la (.*) del time entrie")
-    public void seVerificaLaDuracionDelTimeEntrie(String duration) {
-        //validateDuration(duration);
+    @And("Consulta las (.*) del proyecto")
+    public void consultaLasHorasDelProyecto(String duracion) {
+        validateDuration(duracion);
     }
 
-    @When("Se agrega una (.*)")
+    @When("Se agrega una (.*) al time entry")
     public void seAgregaUnaDescripcion(String descripcion) {
-        BaseService.ADD_TIME_DESC.set(descripcion);
+        BaseService.TIME_DESC.set(descripcion);
     }
 
-    @Then("Se verifica la descripcion")
-    public void seVerificaLaDescripcion() {
-        validateDescripcion();
+    @Then("Se verifica que la hora agregada tenga (.*) colocada")
+    public void seVerificaLaDescripcion(String descripcion) {
+        validateAdd(descripcion);
+    }
+
+    @When("Se busca el proyecto por (.*)")
+    public void seBuscaElProyectoPorDescripcion(String descripcion) {
+        buscarDescripcion(descripcion);
+    }
+
+    @And("Se reemplaza por la (.*)")
+    public void seReemplazaPorLaNuevaDescripcion(String nuevaDescripcion) {
+        BaseService.TIME_DESC.set(nuevaDescripcion);
+    }
+
+    @Then("Se verifica que la (.*) se establecio")
+    public void seVerificaQueLaNuevaDescripcionSeEstablecio(String nuevaDescripcion) {
+        validateDescripcion(nuevaDescripcion);
     }
 }

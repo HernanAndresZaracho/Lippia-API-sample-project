@@ -1,6 +1,6 @@
 package api.model.TimeEntries;
 
-public class TimeInterval {
+public class timeInterval {
     private String start;
     private String end;
     private String duration;
